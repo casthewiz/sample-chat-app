@@ -14,7 +14,6 @@ Node 10.8+ (should be safe with 8+, but run at your own risk)
 Clone this repo. Optionally, checkout your desired release tag.
 ```
 git clone https://github.com/casthewiz/sample-chat-app.git
-git checkout 2019-05-26.2
 ```
 
 Just install dependencies with 
