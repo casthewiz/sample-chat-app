@@ -1,28 +1,25 @@
 import React, {Component} from 'react';
 import {Container, Row, Panel, Button, Col, ListGroup, ListGroupItem} from 'react-bootstrap';
 import Gun from 'gun';
-import _ from 'lodash';
+import ConversationView from './conversations/conversation-view'
 
-class Home extends Component {
+class Interface extends Component {
   constructor({gun}) {
     super()
     this.gun = gun;
   }
 
+  componentWillMount() {
+    const self = this;
+  }
+
   render() {
     return (
       <Container>
-        <Row>
-          <Col sm={4} >
-            <h4>Conversations go Here</h4>
-          </Col>
-          <Col sm={8}>
-            <h4>Messages Go Here</h4>
-          </Col>
-        </Row>
+          <ConversationView gun={this.gun} name={this.props.user} pub={this.props.pub}/>
       </Container>
     );
   }
 }
 
-export default Home;
+export default Interface;
