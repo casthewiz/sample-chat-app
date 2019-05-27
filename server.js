@@ -25,4 +25,4 @@ if (process.env.NODE_ENV !== 'production') {
 app.use(Gun.serve);
 const server = app.listen(port);
 
-Gun({	file: 'db/data.json', web: server, peers: {'https://sample-chat-app-gundb.herokuapp.com/':{}} });
+Gun({	file: 'data.json', web: server, peers: {'https://sample-chat-app-gundb.herokuapp.com/':{}} });

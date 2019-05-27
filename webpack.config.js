@@ -2,10 +2,11 @@ var webpack = require('webpack');
 var path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const FilterWarningsPlugin = require('webpack-filter-warnings-plugin');
 
 var src_dir = __dirname + '/src';
 
-var VENDOR_LIBS = ['lodash', 'react', 'prop-types', 'react-dom', 'gun', 'react-bootstrap'];
+var VENDOR_LIBS = ['lodash', 'nanoid', 'react', 'prop-types', 'react-dom', 'gun', 'react-bootstrap'];
 
 var production = process.env.NODE_ENV === 'production';
 
@@ -33,6 +34,9 @@ webpackConfig = {
     new webpack.optimize.CommonsChunkPlugin({
       names: ['vendor','manifest']
     }),
+    new FilterWarningsPlugin({
+      exclude: /Critical dependency: the request of a dependency is an expression/
+    }),
     new HTMLWebpackPlugin({
       template: 'src/index.html'
     }),
@@ -42,7 +46,10 @@ webpackConfig = {
       }
     }),
     new webpack.HotModuleReplacementPlugin()
-  ]
+  ],
+  watchOptions: {
+   ignored:['data', 'data.json', 'radata', 'ossl']
+  }
 };
 
 if(!production) {

@@ -6,14 +6,16 @@
   "repository": "git@github.com:eddiekollar/ReactBoiler.git",
   "private": true,
   "dependencies": {
+    "bootstrap": "^4.3.1",
     "express": "^4.15.2",
-    "gun": "^0.7.9",
-    "lodash": "^4.17.4",
+    "gun": "0.2019.515",
+    "lodash": "^4.17.11",
+    "nanoid": "^2.0.3",
     "oauth2-client-js": "^0.0.15",
     "path": "^0.12.7",
-    "react": "^15.6.1",
-    "react-bootstrap": "^0.31.0",
-    "react-dom": "^15.6.1",
+    "react": "^16.3.0",
+    "react-bootstrap": "1.0.0-beta.6",
+    "react-dom": "^16.8.0",
     "webpack": "^2.3.3"
   },
   "devDependencies": {
@@ -38,6 +40,7 @@
     "rimraf": "^2.6.1",
     "style-loader": "^0.16.1",
     "webpack-dev-server": "^2.4.2",
+    "webpack-filter-warnings-plugin": "^1.2.1",
     "webpack-hot-middleware": "^2.18.0"
   },
   "scripts": {
