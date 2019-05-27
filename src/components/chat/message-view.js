@@ -60,6 +60,11 @@ class MessageView extends Component {
     })
     .once((message) => {
       messages = messages.concat(message);
+      //Sort our messages by timestamp
+      //Poor solution, but not a big deal until 10^3 messages in
+      //a conversation, shouldn't be loading that much into dom anyways
+      messages.sort((left, right) => left.time - right.time)
+
       this.setState({messages});
 
       //Hacky autoscrolling on new object
@@ -67,11 +72,6 @@ class MessageView extends Component {
       chatwindow.scrollIntoView(false)
     })
   }
-
-  //Stubbed but unsure if needed
-  //Gun seems to be doing well with returning in order of property addition
-  //But still might be neccessary in the future
-  sortMessages(){}
 
   messageBodyChange(event) {
     this.setState( {newMessageBody: event.target.value} )
