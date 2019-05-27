@@ -8,6 +8,7 @@ import {users} from '../auth/test-users.js'
 
 const newConversation = () => {return {id: '', title: ''}};
 
+//likely that Conversation items in the list should be their own component
 class ConversationList extends Component {
   constructor({conversationClick}) {
     super()
@@ -68,11 +69,13 @@ class ConversationView extends Component {
   }
 
   fetchConversations(){
+    //hacky handling for no real "user logout/unmount" routine
     let conversations = [];
     let conversationIdSet = new Set();
     this.setState({conversations, conversationIdSet})
     //retrieve a user's conversations
     //extra map checks for garbage data due to testing
+    //should likely use once
     this.gun.get('conversations')
     .map((conversation) => {
       if (conversation[this.props.pub] != undefined
@@ -85,7 +88,7 @@ class ConversationView extends Component {
     })
     .on((conversation) => {
       //Quick set logic just to check if we already have a conversation
-      //This block needs changed if we wanted to add settings or configgable
+      //This block needs changed if we wanted to add settings or configable
       //conversations. Same for adding/removing users from conversation
       if (!conversationIdSet.has(conversation.id)){
         conversations = conversations.concat(conversation);

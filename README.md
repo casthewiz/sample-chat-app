@@ -11,9 +11,15 @@ To follow along with development notes and updates, I highly suggest reading the
 Node 10.8+ (should be safe with 8+, but run at your own risk)
 
 ### Installation/Launch:
-Just install dependencies with:
-`npm i`
-And spool up the server with:
+Clone this repo. Optionally, checkout your desired release tag.
+```
+git clone https://github.com/casthewiz/sample-chat-app.git
+git checkout 2019-05-26.2
+```
+
+Just install dependencies with 
+`npm i`,
+then spool up an instance locally with 
 `npm start`
 
 ### Usage:
