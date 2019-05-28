@@ -78,6 +78,7 @@ class MessageView extends Component {
   }
 
   sendMessage(){
+    if (!this.newMessageField.value.length > 0) return;
     const newMessage = messageTemplate()
     newMessage.text = this.newMessageField.value
     newMessage.sender = this.props.activeUser
@@ -134,6 +135,7 @@ class MessageView extends Component {
               aria-label="Message"
               ref={el => this.newMessageField = el}
               onChange={ (e) => this.messageBodyChange(e) }
+              onKeyPress={event => { if (event.key == "Enter") this.sendMessage() } }
             />
             <InputGroup.Append>
               <Button variant="primary"
