@@ -51,8 +51,6 @@ class MessageView extends Component {
   fetchMessages(){
     let messages = [];
     //retrieve a message's messages
-    //automagically pushes new convos into the array
-    //extra map checks for garbage data due to testing
     this.gun.get('conversations')
     .get(this.conversationId)
     .map((prop) => {
@@ -78,6 +76,7 @@ class MessageView extends Component {
   }
 
   sendMessage(){
+    if (!this.newMessageField.value.length > 0) return;
     const newMessage = messageTemplate()
     newMessage.text = this.newMessageField.value
     newMessage.sender = this.props.activeUser
@@ -134,6 +133,7 @@ class MessageView extends Component {
               aria-label="Message"
               ref={el => this.newMessageField = el}
               onChange={ (e) => this.messageBodyChange(e) }
+              onKeyPress={event => { if (event.key == "Enter") this.sendMessage() } }
             />
             <InputGroup.Append>
               <Button variant="primary"
