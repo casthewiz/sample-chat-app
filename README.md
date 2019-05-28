@@ -1,5 +1,5 @@
 # sample-chat-app (with GunDB)
-
+Viewable at https://sample-chat-app-react-gundb.herokuapp.com/
 ## About
 This is a quick example chat app utilizing React w/GunDB to handle any realtime updates and concurrency concerns.
 GunDB is an open source decentralized graph database - more info on it here: https://gun.eco/
