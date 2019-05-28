@@ -21,7 +21,13 @@ Just install dependencies with
 then spool up an instance locally with 
 `npm start`
 
-### Usage:
+## Usage:
 Visit the application at:
 `localhost:8080`
 Optionally, visit the deployed application at https://sample-chat-app-react-gundb.herokuapp.com/
+
+## Bugs/Issues
+Active list of tracked bugs is available in https://github.com/casthewiz/sample-chat-app/issues
+
+## Other Notes
+This is pretty hacked together, so some bugs are to be expected. If you find one, feel free to report it in the issue tracker! 
