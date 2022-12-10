@@ -7,7 +7,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "express": "^4.15.2",
+    "express": "^4.17.3",
     "gun": "0.2019.515",
     "lodash": "^4.17.11",
     "nanoid": "^2.0.3",
